@@ -1,10 +1,10 @@
-<h2>Product Details</h2>
+<h1>Product Details</h1>
 
-<div *ngIf="product" class="pb-4">
-    <h3>{{ product.name}}</h3>
-    <!-- <h2> {{product.image}}</h2> -->
-    <img src="src/assets/img/samsung.jpeg" alt="image">
-    <h3>{{ product.price |currency}}</h3>
+<div *ngIf="product" class="pb-4 m-auto w-100">
+    <h2>{{ product.name}}</h2>
+    <p><img [src]="product.phoneImage" class="img-fluid" alt=""></p>
+    <h2>{{ product.price |currency}}</h2>
+    
     <p>{{ product.description }}</p>
     <button class="btn btn-success px-5" (click)="addToCart(product)">Buy</button>
 

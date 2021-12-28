@@ -2,7 +2,8 @@
 <p>
     <a routerLink="/shipping" >Shipping Prices</a>
 </p>
-<div class="cart-item" *ngFor="let item of items">
+<div class="cart-item" *ngFor="let item of items" class="d-flex justify-content-between align-items-center">
+    <span><img [src]="item.phoneImage" class="img-fluid" alt="phone image" width='80' height='160'></span>
     <span>{{ item.name}}</span>
     <span>{{item.price}}</span>
 </div>

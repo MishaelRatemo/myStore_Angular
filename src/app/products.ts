@@ -39,7 +39,7 @@ export interface Product {
     {
       id: 5,
       name: 'Nokia 5.3',
-      phoneImage: 'assets/img/nokia.jpeg',
+      phoneImage: 'assets/img/nokia-9.jpeg',
       price: 179,
       description: `Nokia 5.3
                     6GB RAM

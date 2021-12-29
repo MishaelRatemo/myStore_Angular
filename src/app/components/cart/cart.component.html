@@ -1,21 +1,32 @@
 <h3>Cart</h3>
 <p>
-    <a routerLink="/shipping" >Shipping Prices</a>
+    <a routerLink="/shipping">Shipping Prices</a>
 </p>
-<div class="cart-item" *ngFor="let item of items" class="d-flex justify-content-between align-items-center">
-    <span><img [src]="item.phoneImage" class="img-fluid" alt="phone image" width='80' height='160'></span>
-    <span>{{ item.name}}</span>
-    <span>{{item.price}}</span>
-</div>
+<table class="table table-borderless table-striped">    
+        <tr *ngIf="items" class='text-center'>
+            <th>phone</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Remove</th>
+        </tr>   
+    <tr *ngFor="let item of items" >       
+            
+                <td><span><img [src]="item.phoneImage" class="img-fluid" alt="phone image" width='80'   height='120'></span></td>
+                <td><span>{{ item.name}}</span></td>
+                <td><span>{{item.price|currency}}</span></td>
+                <td><fa-icon class="btn-danger p-2 rounded-3" [ngStyle]="{ color:'red'}" [icon]="faTimes"></fa-icon></td>
+            
+        </tr>
+</table>
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="p-3">
-      <div>  
+    <div>
         <label for="name">Name</label>
         <input type="text" id="name" formControlName='name' class="form-control">
-      </div>
-      <div>
-          <label for="address">Address</label>
-          <input type="text" id="address" formControlName='address' class="form-control">
-      </div>
+    </div>
+    <div>
+        <label for="address">Address</label>
+        <input type="text" id="address" formControlName='address' class="form-control">
+    </div>
 
     <button class="btn btn-success" type="submit"> Purchase</button>
 </form>

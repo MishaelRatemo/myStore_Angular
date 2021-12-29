@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { CartService } from 'src/app/Services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  faTimes = faTimes;
+
   items = this.cartService.getItems();
 
   checkoutForm = this.formBuilder.group({
